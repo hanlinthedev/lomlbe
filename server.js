@@ -3,7 +3,13 @@ const AWS = require("aws-sdk");
 const cors = require("cors");
 
 const app = express();
-
+app.use(
+	cors({
+		origin: process.env.ALLOWED_ORIGIN,
+		methods: ["GET"],
+		allowedHeaders: "*",
+	})
+);
 app.use(express.json());
 
 const s3 = new AWS.S3({

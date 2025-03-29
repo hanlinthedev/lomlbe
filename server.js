@@ -7,6 +7,7 @@ app.use(
 	cors({
 		origin: process.env.ALLOWED_ORIGIN,
 		methods: ["GET"],
+		allowedHeaders: ["Content-Type", "Authorization"],
 	})
 );
 app.use(express.json());
